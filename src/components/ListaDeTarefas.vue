@@ -1,5 +1,5 @@
 <script setup>
-    const props = defineProps(['tarefas'])
+    const props = defineProps(['tarefas', 'tarefasPendentes', 'valorFiltro'])
 </script>
 <template>
     <ul class="list-group mt-4">
@@ -11,6 +11,7 @@
             </label>
         </li>
     </ul>
+    <span v-if="props.tarefasPendentes === 0 && props.valorFiltro == 'pendentes'" >Você não possui tarefas pendentes</span>
 </template>
 
 <style scoped>
